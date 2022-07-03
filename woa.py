@@ -78,12 +78,13 @@ def whale_optimization_algorithm(hunting_party=10, spiral_param=1,  min_values=[
     count = 0
     hist = []
     leader_plot = []
+    print(min_values, max_values)
     positions = whale_initial_position(
         hunting_party=hunting_party, min_values=min_values, max_values=max_values, target_function=target_function)
     leader = whale_leader_position(dimension=len(
         min_values), target_function=target_function)
-    while(count < iterations):
-        leader_plot.append(list(leader[0, :len(min_values)]))
+    while(count <= iterations):
+        # print("Iteration",count,"f(x) =",leader)
         plt.show()
         hist.append(leader[0, -1])
         a_linear_component = 2 - count*(2/iterations)  # linear component of a
@@ -93,7 +94,7 @@ def whale_optimization_algorithm(hunting_party=10, spiral_param=1,  min_values=[
         positions = whale_update_position(positions, leader, a_linear_component=a_linear_component, b_linear_component=b_linear_component,
                                           spiral_param=spiral_param, min_values=min_values, max_values=max_values, target_function=target_function)
         count += 1
-    return leader, hist, leader_plot
+    return leader, hist
 
 
 woa, woahist, woaleader_plot = whale_optimization_algorithm(

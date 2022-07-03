@@ -47,7 +47,8 @@ def firefly_update_position(position, x, y, alpha_0=0.2, beta_0=1, gama=1, firef
 def firefly_algorithm(swarm_size=3, min_values=[-5, -5], max_values=[5, 5], generations=50, alpha_0=0.2, beta_0=1, gama=1, target_function=target_function):
     count = 0
     hist = []
-    positions = initial_fireflies(target_function=target_function)
+    positions = initial_fireflies(swarm_size=swarm_size, min_values=min_values,
+                                  max_values=max_values, target_function=target_function)
     while(count <= generations):
         # print("Generation :",count,"f(x) = ",positions[positions[:,-1].argsort()][0,:][-1])
         for i in range(swarm_size):
@@ -67,6 +68,3 @@ def firefly_algorithm(swarm_size=3, min_values=[-5, -5], max_values=[5, 5], gene
         best_firefly = np.copy(positions[positions[:, -1].argsort()][0, :])
         hist.append(best_firefly[-1])
     return best_firefly, hist
-
-
-firefly_algorithm(target_function=easom)
