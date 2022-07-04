@@ -7,6 +7,10 @@ import matplotlib.pyplot as plt
 from test_functions import *
 
 
+def euclidean_distence(x, y):
+    return np.sqrt(np.sum((x-y)**2))
+
+
 def hybrid_initital_position(hunting_party=5, min_values=[-5, -5], max_values=[5, 5], target_function=target_function):
     positions = np.zeros((hunting_party, len(min_values)+1))
     for i in range(hunting_party):
@@ -23,10 +27,6 @@ def hybrid_whale_leader(dimension=2, target_function=target_function):
         leader[0][i] = random.uniform(-5, 5)
     leader[0][dimension] = target_function(leader[0][:dimension])
     return leader
-
-
-def euclidean_distence(x, y):
-    return np.sqrt(np.sum((x-y)**2))
 
 
 def beta_value(x, y, gama=1, beta_0=1):
