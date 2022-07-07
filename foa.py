@@ -50,7 +50,8 @@ def firefly_algorithm(swarm_size=3, min_values=[-5, -5], max_values=[5, 5], gene
     positions = initial_fireflies(swarm_size=swarm_size, min_values=min_values,
                                   max_values=max_values, target_function=target_function)
     while(count <= generations):
-        # print("Generation :",count,"f(x) = ",positions[positions[:,-1].argsort()][0,:][-1])
+        print("Generation (FFOA):", count, "f(x) = ",
+              positions[positions[:, -1].argsort()][0, :][-1])
         for i in range(swarm_size):
             for j in range(swarm_size):
                 if(i != j):

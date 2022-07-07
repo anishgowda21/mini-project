@@ -110,7 +110,7 @@ def whalefireflyhybrid(huntingparty=5, spiral_param=1, min_values=[-5, -5], max_
         min_values), target_function=target_function)
 
     while(count <= generations):
-        # print("Generation:",count,"Leader:",leader)
+        print("Generation(HOA):", count, "Leader:", leader[0, -1])
         hist.append(leader[0, -1])
         a_linear_component = 2 - count*(2/generations)  # linear component of a
         b_linear_component = -1 + count * \

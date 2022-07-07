@@ -78,13 +78,12 @@ def whale_optimization_algorithm(hunting_party=10, spiral_param=1,  min_values=[
     count = 0
     hist = []
     leader_plot = []
-    print(min_values, max_values)
     positions = whale_initial_position(
         hunting_party=hunting_party, min_values=min_values, max_values=max_values, target_function=target_function)
     leader = whale_leader_position(dimension=len(
         min_values), target_function=target_function)
     while(count <= iterations):
-        # print("Iteration",count,"f(x) =",leader)
+        print("Iteration (WOA):", count, "f(x) =", leader[0, -1])
         plt.show()
         hist.append(leader[0, -1])
         a_linear_component = 2 - count*(2/iterations)  # linear component of a
@@ -95,12 +94,3 @@ def whale_optimization_algorithm(hunting_party=10, spiral_param=1,  min_values=[
                                           spiral_param=spiral_param, min_values=min_values, max_values=max_values, target_function=target_function)
         count += 1
     return leader, hist
-
-
-woa, woahist, woaleader_plot = whale_optimization_algorithm(
-    target_function=beale)
-print("WOA:", woa)
-
-# plot the histogram of the WOA
-plt.plot(woahist)
-plt.show()
