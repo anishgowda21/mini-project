@@ -9,11 +9,11 @@
 
 ## Whale Optimization Algorithm
 
-[woa](images/woa.jpg)
+![woa](images/woa.jpg)
 
 ## Firefly Algorithm
 
-[firefly](images/foa.jpg)
+![firefly](images/foa.jpg)
 
 Algorithmic Description of hybridized algorithm
 
