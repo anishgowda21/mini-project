@@ -1,4 +1,4 @@
-# Improvising Subspace Clustering Algorithm Using Nature Inspired Algorithm
+# Improvising Subspace Clustering Using Nature Inspired Algorithm
 
 - Subspace clustering is an extension of traditional N-dimensional cluster analysis which allows to simultaneously group features and observations by creating both row and column clusters.
 - One of the challenges of working with high dimensional data is that many dimensions are irrelevant and can mask existing clusters in noisy data.
